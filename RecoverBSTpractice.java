@@ -73,7 +73,7 @@ public class RecoverBSTpractice {
         root.right = new TreeNode(4);
         root.right.left = new TreeNode(2);
 
-        RecoverBST bst = new RecoverBST();
+        RecoverBSTpractice bst = new RecoverBST();
         System.out.print("Before fix (in-order): ");
         bst.printInOrder(root);
         System.out.println();

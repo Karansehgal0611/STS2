@@ -37,7 +37,7 @@ public class TopologicalSort {
             }
         }
 
-
+        
         int visitedNodes = 0;
         List<Integer> order = new ArrayList<>();
 
@@ -74,7 +74,7 @@ public class TopologicalSort {
         graph.createEdge(2, 5);
         graph.createEdge(3, 4);
         graph.createEdge(5, 4);
-        
+
         graph.topological();
     }
 }
