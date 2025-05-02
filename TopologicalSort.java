@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.LinkedList;
 
 public class TopologicalSort {
+    // Adjacency list to represent the graph
     private Map<Integer,List<Integer>> adj;
     private int V;
 
@@ -22,13 +23,13 @@ public class TopologicalSort {
     public void topological(){
         int[] indegree = new int[V];
         Arrays.fill(indegree, 0);
-
+        // Calculate indegree of each vertex
         for(int i = 0; i < V; i++){
             for(int j : adj.get(i)){
                 indegree[j]++;
             }
         }
-
+        // Queue to store vertices with indegree 0
         Queue<Integer> queue = new LinkedList<>();
         for(int i = 0; i < V; i++){
             if(indegree[i] == 0){
@@ -36,8 +37,11 @@ public class TopologicalSort {
             }
         }
 
+
         int visitedNodes = 0;
         List<Integer> order = new ArrayList<>();
+
+        // Process all vertices with indegree 0
         while(!queue.isEmpty()){
             int u = queue.poll();
             order.add(u);
@@ -70,7 +74,7 @@ public class TopologicalSort {
         graph.createEdge(2, 5);
         graph.createEdge(3, 4);
         graph.createEdge(5, 4);
-
+        
         graph.topological();
     }
 }
